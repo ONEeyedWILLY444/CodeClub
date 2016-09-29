@@ -1,6 +1,6 @@
 def calculate_hours(mins)
-  hours = Time.at(mins * 60).utc.strftime("%H:%M")
-	"#{hours[/^[^:]+\s*/]} hour(s) and #{hours[-2..-1]} min(s)"
+  hours = mins.divmod(60)
+	"#{hours[0]} hour(s) and #{hours[1]} min(s)"
 end
 
 puts "hackspace timesheet program"
